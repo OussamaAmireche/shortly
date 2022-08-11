@@ -1,0 +1,24 @@
+.main-button{
+    font: {
+        size: 1rem;
+        weight: 700;
+    };
+    color: white;
+    background-color: $cyanColor;
+    padding: calc($mainPadding / 2) $mainPadding;
+    border-radius: $mainPadding;
+    border: none;
+    width: fit-content;
+    &:hover{
+        cursor: pointer;
+    }
+    &:active{
+        background-color: $cyanActiveColor;
+    }
+}
+
+.main-button-sm{
+    @extend .main-button;
+    font-size: 0.8rem;
+    padding: 10px 15px;
+}

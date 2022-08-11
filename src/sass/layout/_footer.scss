@@ -1,0 +1,77 @@
+.footer{
+    background-color: $blackBackground;
+    color: white;
+    .container{
+        display: flex;
+        padding: ($mainPadding * 4) 15px;
+        @include maxMedium {
+            flex-wrap: wrap;
+        }
+        @include maxSmall {
+            display: block;
+        }
+        .logo{
+            @include maxSmall {
+                margin-bottom: $mainPadding * 2;
+            }
+        }
+        .lists-grid{
+            margin-left: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 100px;
+            @include maxLarge {
+                column-gap: 50px;
+            }
+            @include maxSmall {
+                grid-template-columns: 1fr;
+                row-gap: 15px;
+            }
+            div{
+                h5{
+                    margin-top: 0;
+                    font-size: 1rem;
+                }
+                .unstyled-list{
+                    li{
+                        font-size: 0.9rem;
+                        color: $linkColor;
+                        margin-bottom: 10px;
+                        transition: color 0.3s linear;
+                        &:hover{
+                            color: $cyanColor;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+        .social-media{
+            margin-left: 70px;
+            @include maxLarge {
+                margin-left: 50px;
+            }
+            @include maxMedium {
+                margin-left: 0;
+            }
+            svg{
+                margin-left: $mainPadding;
+                &:first-of-type{
+                    @include maxMedium {
+                        margin-left: 0;
+                        margin-top: $mainPadding;
+                    }
+                }
+                path{
+                    transition: all 0.3s linear;
+                }
+                &:hover{
+                    cursor: pointer;
+                    path{
+                        fill: $cyanColor;
+                    }
+                }
+            }
+        }
+    }
+}

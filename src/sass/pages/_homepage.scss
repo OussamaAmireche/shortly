@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font: {
+        size: 18px;
+    };
+    color: $secondaryColor;
+    @include maxSmall {
+        text-align: center;
+    }
+}
+
+.landing{
+    .container{
+        padding: $mainPadding 15px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: space-between;
+        @include maxSmall{
+            flex-direction: column;
+        }
+        .landing-info{
+            width: 42%;
+            @include maxSmall{
+                margin-top: $mainPadding * 2;
+                width: 100%;
+                order: 2;
+            }
+            h1{
+                font-size: 4rem;
+                margin: 0;
+                @include maxXLarge{
+                    font-size: 3rem;
+                }
+                @include maxLarge{
+                    font-size: 2.5rem;
+                }
+            }
+            p{
+                margin: 0;
+                margin-bottom: $mainPadding;
+                color: $textColor;
+                line-height: 2rem;
+                @include maxLarge{
+                    font-size: 0.9rem;
+                }
+            }
+            .main-button{
+                @include maxSmall{
+                    margin: auto;
+                }
+            }
+        }
+        img{
+            width: 50%;
+            @include maxSmall{
+                width: 100%;
+                order: 1;
+            }
+        }
+    }
+}
+
+.shorten{
+    padding: {
+        top: $mainPadding;
+        bottom: $mainPadding;
+    };
+    position: relative;
+    .background{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: $grayBackground;
+        top: 89px;
+        @include maxMedium{
+            top: 69px;
+        }
+        @include maxSmall{
+            top: 99px;
+        }
+    }
+    .container{
+        box-sizing: border-box;
+        .form{
+            padding: ($mainPadding * 2) ($mainPadding * 3);
+            border-radius: 10px;
+            background: {
+                color: $violetColor;
+                image: url(./images/bg-boost-desktop.svg);
+                size: cover;
+            };
+            @include maxMedium {
+                padding: ($mainPadding) ($mainPadding * 1.5);
+            }
+            form{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                @include maxSmall {
+                    display: block;
+                }
+                input{
+                    display: block;
+                    width: 100%;
+                    margin-right: $mainPadding * 2;
+                    padding: $mainPadding;
+                    border-radius: 10px;
+                    font-family: 'Poppins', sans-serif;
+                    @include maxSmall {
+                        margin: {
+                            right: 0;
+                            bottom: $mainPadding;
+                        };
+                    }
+                    &::placeholder{
+                        font: {
+                            size: 18px;
+                            family: 'Poppins', sans-serif;
+                        };
+                        color: $textColor;
+                        @include maxMedium{
+                            font-size: 0.8rem;
+                        }
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                    @include maxMedium{
+                        padding: {
+                            top: 15px;
+                            bottom: 15px;
+                        };
+                    }
+                }
+                button{
+                    display: block;
+                    width: 150px;
+                    border-radius: 10px;
+                    padding: {
+                        top: 20px;
+                        bottom: 20px;
+                    };
+                    @include maxMedium {
+                        width: 200px;
+                        padding: {
+                            top: 15px;
+                            bottom: 15px;
+                        };
+                    }
+                    @include maxSmall {
+                        width: 100%;
+                    }
+                }
+            }
+            .error-msg{
+                color: $redColor;
+                font: {
+                    weight: 500;
+                    style: italic;
+                    size: 0.9rem;
+                };
+            }
+        }
+        .saved-link{
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: calc($mainPadding / 2) $mainPadding;
+            margin-top: $mainPadding * 2;
+            border-radius: 5px;
+            @include maxMedium {
+                font-size: 0.8rem;
+            }
+            @include maxSmall {
+                display: block;
+                text-align: start;
+            }
+            .key{
+                @include maxSmall {
+                    margin: 0;
+                    padding-bottom: calc($mainPadding / 2);
+                    border-bottom: 1px solid #E5E5E5;
+                }
+            }
+            .value{
+                margin: {
+                    left: auto;
+                    right: $mainPadding
+                };
+                color: $cyanColor;
+            }
+            .main-button{
+                border-radius: 5px;
+                &.copied{
+                    background-color: $violetColor;
+                    color: white;
+                }
+                @include maxMedium {
+                    font-size: 0.8rem;
+                }
+                @include maxSmall {
+                    width: 100%;
+                }
+            }
+            .delete{
+                margin-left: $mainPadding;
+                background-color: $redColor;
+                @include maxSmall {
+                    margin: {
+                        left: 0;
+                        top: calc($mainPadding / 2);
+                    };
+                }
+            }
+        }
+    }
+}
+.advanced{
+    background-color: $grayBackground;
+    .container{
+        padding: {
+            top: $mainPadding * 3;
+            bottom: $mainPadding;
+        };
+        h2{
+            text-align: center;
+            font-size: 2.5rem;
+            @include maxSmall {
+                font-size: 1.8rem;
+                margin-top: 0;
+            }
+        }
+        > p{
+            width: 40%;
+            text-align: center;
+            margin: auto;
+            color: $linkColor;
+            @include maxMedium {
+                width: 60%;
+                font-size: 0.9rem;
+            }
+            @include maxSmall {
+                width: 100%;
+            }
+        }
+        .grid{
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: $mainPadding * 1.5;
+            margin: ($mainPadding * 5) 0;
+            @include maxMedium {
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: $mainPadding * 3;
+            }
+            @include maxSmall {
+                grid-template-columns: 1fr;
+                row-gap: $mainPadding * 4;
+            }
+            &::before{
+                content: "";
+                height: 10px;
+                width: 100%;
+                background-color: $cyanColor;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                @include maxMedium {
+                    width: 0;
+                }
+                @include maxSmall {
+                    width: 10px;
+                    height: 70%;
+                    top: 15%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            div{
+                position: relative;
+                background-color: white;
+                padding: {
+                    top: $mainPadding * 2.2;
+                    left: $mainPadding * 1.5;
+                    right: $mainPadding * 1.5;
+                    bottom: $mainPadding;
+                };
+                border-radius: 10px;
+                &.brand-recognition{
+                    grid-row-start: 1;
+                    grid-row-end: 8;
+                    @include maxMedium {
+                        grid-row-start: auto;
+                        grid-row-end: auto;
+                    }
+                }
+                &.detailed-records{
+                    grid-row-start: 2;
+                    grid-row-end: 9;
+                    @include maxMedium {
+                        grid-row-start: auto;
+                        grid-row-end: auto;
+                    }
+                }
+                &.fully-customizable{
+                    grid-row-start: 3;
+                    grid-row-end: 10;
+                    @include maxMedium {
+                        grid-row-start: auto;
+                        grid-row-end: auto;
+                    }
+                }
+                .image-frame{
+                    position: absolute;
+                    top: 0;
+                    transform: translateY(-50%);
+                    background-color: $violetColor;
+                    border-radius: 50%;
+                    padding: $mainPadding;
+                    width: 80px;
+                    height: 80px;
+                    @include maxSmall {
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                    }
+                    img{
+                        width: 100%;
+                    }
+                }
+                h4{
+                    font-size: 1.5rem;
+                    margin-bottom: 20px;
+                    @include maxSmall {
+                        font-size: 1.3rem;
+                    }
+                }
+                p{
+                    color: $linkColor;
+                    @include maxMedium {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+}
+.boost{
+    background: {
+        color: $violetColor;
+        image: url(./images/bg-boost-desktop.svg);
+        size: cover
+    };
+    text-align: center;
+    color: white;
+    padding: ($mainPadding * 4) $mainPadding;
+    h2{ 
+        margin-top: 0;
+        font-size: 2.5rem;
+        @include maxSmall{
+            font-size: 1.5rem;
+        }
+    }
+}

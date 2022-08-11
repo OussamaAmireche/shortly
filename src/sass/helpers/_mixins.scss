@@ -1,0 +1,80 @@
+@mixin maxMobile {
+    @media (max-width: 575px){
+        @content;
+    }
+}
+
+@mixin minSmall {
+    @media (min-width: 576px){
+        @content;
+    }
+}
+
+@mixin minMedium {
+    @media (min-width: 776px){
+        @content;
+    }
+}
+
+@mixin maxSmall {
+    @media (max-width: 775px){
+        @content;
+    }
+}
+
+@mixin minLarge {
+    @media (min-width: 992px){
+        @content;
+    }
+}
+
+@mixin maxMedium {
+    @media (max-width: 991px){
+        @content;
+    }
+}
+
+@mixin minXLarge {
+    @media (min-width: 1200px){
+        @content;
+    }
+}
+
+@mixin maxLarge {
+    @media (max-width: 1199px){
+        @content;
+    }
+}
+
+@mixin minXXLarge {
+    @media (min-width: 1400px){
+        @content;
+    }
+}
+
+@mixin maxXLarge {
+    @media (min-width: 1399px){
+        @content;
+    }
+}
+
+@mixin prefixer ($property, $value, $prefixes...) {
+    @each $prefixe in $prefixes {
+        #{'-' + $prefixe + '-' + $property} : $value;
+    }
+    #{$property} : $value;
+}
+
+@mixin KeyFrame ($animation){
+    @-webkit-keyframes #{$animation}{
+        @content;
+    }
+    
+    @-moz-keyframes #{$animation}{
+        @content;
+    }
+
+    @keyframes #{$animation}{
+        @content;
+    }
+}

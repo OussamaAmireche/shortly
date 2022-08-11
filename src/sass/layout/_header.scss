@@ -1,0 +1,114 @@
+.navbar{
+    .container{
+        padding: {
+            top: $mainPadding;    
+            bottom: $mainPadding;    
+        };
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        @include maxSmall {
+            display: block !important;
+        }
+        .small-screen-header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .logo{
+                margin: {
+                    top: 0px;
+                    bottom: 0px;
+                    right: 25px;
+                };
+                @include maxSmall {
+                    margin-right: 0;
+                }
+            }
+            .bars{
+                width: 25px;
+                display: flex;
+                align-items: center;
+                display: none;
+                @include maxSmall {
+                    display: block;
+                }
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            @include maxSmall {
+                background-color: $secondaryColor;
+                display: block !important;
+                text-align: center;
+                padding: 30px;
+                border-radius: 10px;
+                margin-top: 20px;
+                width: auto;
+            }
+            .unstyled-list{
+                display: flex;
+                @include maxSmall {    
+                    display: block !important;
+                    margin: 0;
+                    &:not(:last-child){
+                        border-bottom: 1px solid #544A6D;
+                    }
+                }
+                li{
+                    font-weight: 700;
+                    padding: calc($mainPadding / 4) calc($mainPadding / 2);
+                    font-size: 0.8em;
+                    color: $linkColor;
+                    transition: {
+                        property: color;
+                        duration: 0.5s;
+                    };
+                    &:hover{
+                        color: $secondaryColor;
+                        cursor: pointer;
+                        @include maxSmall {
+                            color: #ccc;
+                        }
+                    };
+                    @include minLarge {
+                        padding: calc($mainPadding / 2) $mainPadding;
+                    }
+                    @include maxSmall {    
+                        color: white;
+                        padding: 0;
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+            .buttons{
+                margin: {
+                    left: auto;
+                };
+                @include maxSmall {    
+                    display: block !important;
+                }
+                li{
+                    margin-right: $mainPadding;
+                    @include minLarge {
+                        margin-right: 0px;
+                    }
+                    @include maxSmall {    
+                        margin-right: 0px;
+                        padding-top: 20px;
+                    }
+                }
+                .main-button-sm{
+                    @include maxSmall {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

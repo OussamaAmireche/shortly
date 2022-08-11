@@ -1,0 +1,20 @@
+.container{
+    width: 100%;
+    padding: 0 15px;
+    margin: auto;
+    @include minSmall {
+        width: 	540px;
+    }
+    @include minMedium {
+        width: 	720px;
+    }
+    @include minLarge {
+        width: 	960px;
+    }
+    @include minXLarge {
+        width: 	1140px;
+    }
+    @include minXXLarge {
+        width: 	1320px;
+    }
+}
